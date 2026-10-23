@@ -3,7 +3,7 @@ name: user-agreements
 description: Draft user agreements for software, apps, SaaS and connected products sold in the EU and the US. Covers terms of service, EULAs, subscription and auto-renewal terms, privacy and cookie notices, acceptable use policies, B2B data processing agreements, and the EU consumer add-ons (withdrawal information with the model form, the German Impressum). Use when asked to write, review or adapt such a document, or to check a checkout, renewal or cancellation flow against consumer law in Germany, the EU, California, New York or other US states. The output is a set of drafts for a lawyer to review, with annotations, open points and the date of the law used. It is not legal advice.
 license: Apache-2.0
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   law-as-of: "2026-10-20"
 ---
 

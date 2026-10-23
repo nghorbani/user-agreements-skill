@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nghorbani.github.io/user-agreements-skill/sitemap.xml

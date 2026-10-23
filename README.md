@@ -5,7 +5,7 @@
 A skill for Claude Code that drafts terms of service, EULAs, subscription terms, privacy and cookie notices,
 acceptable use policies and B2B data processing agreements for software and connected products sold in the EU and
 the US. It hands the drafts to your lawyer with the legal basis of every clause, the open points and a list of what
-your product flows must do. Documentation: <https://nghorbani.github.io/user-agreements-skill/>
+your product flows must do. Documentation: <https://termsmith.github.io/>
 
 The drafts are for review by a qualified lawyer and are not legal advice. Law as of 20 October 2026.
 
@@ -36,14 +36,14 @@ or users per US state, that law stays undetermined and the clauses that depend o
 
 Four complete hand-overs, each from a single request (fictional companies):
 
-- [Fitness app with a monthly subscription](https://nghorbani.github.io/user-agreements-skill/examples/fitness-app/)
+- [Fitness app with a monthly subscription](https://termsmith.github.io/examples/fitness-app/)
   in Germany, Austria, California and New York: subscription terms, withdrawal information, checkout and
   cancellation requirements.
-- [B2B SaaS for manufacturers](https://nghorbani.github.io/user-agreements-skill/examples/b2b-saas/) in the EU and
+- [B2B SaaS for manufacturers](https://termsmith.github.io/examples/b2b-saas/) in the EU and
   three US states: master subscription terms and a data processing agreement.
-- [Connected camera with a desktop app](https://nghorbani.github.io/user-agreements-skill/examples/camera-eula/):
+- [Connected camera with a desktop app](https://termsmith.github.io/examples/camera-eula/):
   EULA for the app and firmware, cloud plan terms and a privacy notice for diagnostic data.
-- [Photo community with user content](https://nghorbani.github.io/user-agreements-skill/examples/ugc-platform/):
+- [Photo community with user content](https://termsmith.github.io/examples/ugc-platform/):
   platform terms, moderation policy and notice and complaint flows under the Digital Services Act.
 
 A first message can be as short as this:
@@ -59,14 +59,14 @@ withdrawal information, and tell us what our checkout and cancellation flows mus
 As a Claude Code plugin, in PowerShell, bash or zsh:
 
 ```
-claude plugin marketplace add nghorbani/user-agreements-skill
-claude plugin install user-agreements@user-agreements-skill
+claude plugin marketplace add termsmith/user-agreements
+claude plugin install user-agreements@termsmith
 ```
 
 With the `skills` command line tool (needs Node.js):
 
 ```
-npx skills add nghorbani/user-agreements-skill -a claude-code
+npx skills add termsmith/user-agreements -a claude-code
 ```
 
 Or copy the folder `plugins/user-agreements/skills/user-agreements` into your skills folder.
@@ -74,21 +74,21 @@ Or copy the folder `plugins/user-agreements/skills/user-agreements` into your sk
 PowerShell:
 
 ```powershell
-git clone https://github.com/nghorbani/user-agreements-skill.git
+git clone https://github.com/termsmith/user-agreements.git
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
-Copy-Item -Recurse user-agreements-skill\plugins\user-agreements\skills\user-agreements "$env:USERPROFILE\.claude\skills\user-agreements"
+Copy-Item -Recurse user-agreements\plugins\user-agreements\skills\user-agreements "$env:USERPROFILE\.claude\skills\user-agreements"
 ```
 
 bash:
 
 ```bash
-git clone https://github.com/nghorbani/user-agreements-skill.git
+git clone https://github.com/termsmith/user-agreements.git
 mkdir -p ~/.claude/skills
-cp -r user-agreements-skill/plugins/user-agreements/skills/user-agreements ~/.claude/skills/
+cp -r user-agreements/plugins/user-agreements/skills/user-agreements ~/.claude/skills/
 ```
 
 The skill is Markdown only: no scripts, no network calls. More in the
-[install guide](https://nghorbani.github.io/user-agreements-skill/install/).
+[install guide](https://termsmith.github.io/install/).
 
 ## Coverage
 
@@ -113,7 +113,7 @@ covers federal law, California and New York in full, and the other state privacy
 
 Flag means the skill raises the topic as an open point or covers only part of it. Germany applies the EU regulations
 directly, so "not covered" there means no extra German statute on top of the EU rule. The full instrument list is on
-the [coverage page](https://nghorbani.github.io/user-agreements-skill/coverage/).
+the [coverage page](https://termsmith.github.io/coverage/).
 
 **EU:** Consumer Rights Directive with the withdrawal function and the 2024/825 duties, Unfair Contract Terms
 Directive, Unfair Commercial Practices Directive, Digital Content and Sale of Goods Directives, right to repair

@@ -1,13 +1,13 @@
 {
   "name": "user-agreements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Drafts terms of service, EULAs, subscription terms, privacy and cookie notices, acceptable use policies and B2B data processing agreements for software and connected products sold in the EU and the US, for counsel to review.",
   "author": {
     "name": "nghorbani",
     "email": "nima.gbani@gmail.com"
   },
-  "homepage": "https://nghorbani.github.io/user-agreements-skill/",
-  "repository": "https://github.com/nghorbani/user-agreements-skill",
+  "homepage": "https://termsmith.github.io/",
+  "repository": "https://github.com/termsmith/user-agreements",
   "license": "Apache-2.0",
   "keywords": ["terms-of-service", "eula", "subscription-terms", "privacy-policy", "cookie-notice", "dpa", "gdpr", "ccpa", "consumer-law", "contract-drafting"]
 }
