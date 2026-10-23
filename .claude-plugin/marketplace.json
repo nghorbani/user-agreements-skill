@@ -1,0 +1,24 @@
+{
+  "name": "user-agreements-skill",
+  "owner": {
+    "name": "nghorbani",
+    "email": "nima.gbani@gmail.com"
+  },
+  "metadata": {
+    "description": "Drafting skill for terms of service, EULAs, privacy notices and DPAs for software sold in the EU and the US.",
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "user-agreements",
+      "source": "./plugins/user-agreements",
+      "description": "Drafts terms of service, EULAs, subscription terms, privacy and cookie notices, acceptable use policies and B2B data processing agreements for software and connected products sold in the EU and the US, for counsel to review.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "tags": ["terms-of-service", "eula", "privacy-policy", "gdpr", "ccpa", "consumer-law", "contract-drafting", "legal-documents"],
+      "homepage": "https://nghorbani.github.io/user-agreements-skill/",
+      "license": "Apache-2.0"
+    }
+  ]
+}

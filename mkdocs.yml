@@ -1,0 +1,140 @@
+site_name: User Agreements Skill
+site_url: https://nghorbani.github.io/user-agreements-skill/
+site_description: >-
+  A Claude Code skill that drafts terms of service, EULAs, subscription terms, privacy and cookie notices,
+  acceptable use policies and data processing agreements for software sold in the EU and the US, for review
+  by counsel.
+site_author: nghorbani
+repo_url: https://github.com/nghorbani/user-agreements-skill
+repo_name: nghorbani/user-agreements-skill
+edit_uri: ""
+copyright: Copyright 2026 nghorbani. Apache License 2.0. Not legal advice.
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+
+plugins:
+  - search
+  - llmstxt:
+      markdown_description: >-
+        A skill for Claude Code that drafts terms of service, EULAs, subscription terms, privacy and cookie
+        notices, acceptable use policies and B2B data processing agreements for software and connected products
+        sold in the EU and the US. The drafts are for review by counsel; the skill is not legal advice.
+      sections:
+        Start:
+          - index.md: How to use the skill, what a hand-over contains, what it drafts
+          - how-it-works.md: The six steps from intake to hand-over, and the rules the skill keeps
+          - install.md: Plugin, skills command line tool, or a copy of the folder
+        Use cases:
+          - use-cases/saas-terms-eu-us.md: Master subscription terms and a DPA for B2B SaaS in the EU and the US
+          - use-cases/subscription-app-terms.md: Subscription terms and withdrawal information for Germany, California, New York
+          - use-cases/eula-software-with-hardware.md: EULA for an app and firmware sold with a connected device
+          - use-cases/privacy-notice-gdpr-ccpa.md: Privacy and cookie notice under GDPR, TDDDG and US state law
+          - use-cases/platform-terms-dsa.md: Platform terms, moderation and complaint flows under the DSA
+        Examples:
+          - examples/index.md: Four complete hand-overs from single requests by fictional companies
+          - examples/fitness-app/index.md: Fitness app subscription in Germany, Austria, California, New York
+          - examples/b2b-saas/index.md: B2B SaaS terms and DPA for manufacturers in the EU and three US states
+          - examples/camera-eula/index.md: EULA, cloud terms and privacy notice for a connected camera
+          - examples/ugc-platform/index.md: Platform terms and moderation flows for a photo community
+        Reference:
+          - coverage.md: Topic by jurisdiction coverage, instrument list, what is not covered
+          - faq.md: Legal advice, markets, output, data, questions
+          - disclaimer.md: Drafts for counsel, not legal advice, law as of 20 October 2026
+          - privacy.md: GitHub Pages hosting, no cookies, no analytics
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - How it works: how-it-works.md
+  - Install: install.md
+  - Use cases:
+      - SaaS terms for the EU and the US: use-cases/saas-terms-eu-us.md
+      - Subscription app terms: use-cases/subscription-app-terms.md
+      - EULA for software with hardware: use-cases/eula-software-with-hardware.md
+      - Privacy notice under GDPR and CCPA: use-cases/privacy-notice-gdpr-ccpa.md
+      - Platform terms under the DSA: use-cases/platform-terms-dsa.md
+  - Examples:
+      - Overview: examples/index.md
+      - Fitness app subscription:
+          - "Overview": examples/fitness-app/index.md
+          - "Annotations": examples/fitness-app/annotations.md
+          - "Implementation requirements": examples/fitness-app/implementation-requirements.md
+          - "Open points": examples/fitness-app/open-points.md
+          - "Reply to the client": examples/fitness-app/reply.md
+          - "Subscription terms": examples/fitness-app/subscription-terms.md
+          - "Withdrawal information": examples/fitness-app/withdrawal-information.md
+      - B2B SaaS for manufacturers:
+          - "Overview": examples/b2b-saas/index.md
+          - "Annotations": examples/b2b-saas/annotations.md
+          - "Changing a sub-processor": examples/b2b-saas/backend-subprocessor-change-memo.md
+          - "Data processing agreement": examples/b2b-saas/data-processing-agreement.md
+          - "Implementation requirements": examples/b2b-saas/implementation-requirements.md
+          - "Subscription terms": examples/b2b-saas/master-subscription-terms.md
+          - "Open points": examples/b2b-saas/open-points.md
+          - "Questions back to the client": examples/b2b-saas/reply.md
+      - Connected camera EULA:
+          - "Overview": examples/camera-eula/index.md
+          - "Annotations": examples/camera-eula/annotations.md
+          - "The licence agreement": examples/camera-eula/eula-desktop-app-and-firmware.md
+          - "Implementation requirements": examples/camera-eula/implementation-requirements.md
+          - "Impressum": examples/camera-eula/impressum.md
+          - "Open points": examples/camera-eula/open-points.md
+          - "Privacy notice": examples/camera-eula/privacy-notice.md
+          - "Reply to the client": examples/camera-eula/reply.md
+          - "Scout Cloud terms": examples/camera-eula/scout-cloud-terms.md
+      - Photo community with user content:
+          - "Overview": examples/ugc-platform/index.md
+          - "Annotations": examples/ugc-platform/annotations.md
+          - "Moderation policy": examples/ugc-platform/content-moderation-policy.md
+          - "Cookie notice": examples/ugc-platform/cookie-notice.md
+          - "Implementation requirements": examples/ugc-platform/implementation-requirements.md
+          - "Impressum": examples/ugc-platform/impressum.md
+          - "Notice and complaint procedures": examples/ugc-platform/notice-and-complaint-procedures.md
+          - "Open points": examples/ugc-platform/open-points.md
+          - "Privacy notice": examples/ugc-platform/privacy-notice.md
+          - "Questions back to the client": examples/ugc-platform/reply.md
+          - "Terms of service": examples/ugc-platform/terms-of-service.md
+  - Coverage: coverage.md
+  - FAQ: faq.md
+  - Disclaimer: disclaimer.md
+  - Privacy: privacy.md

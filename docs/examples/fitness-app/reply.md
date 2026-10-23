@@ -1,0 +1,47 @@
+---
+title: "Fitness app subscription: reply to the client"
+description: The cover reply sent back to the client, with the questions for counsel's review and a summary of what was drafted.
+---
+
+*Fictional product, illustrative draft. Not legal advice.*
+
+# Reply to Example Fitness GmbH
+
+This is a drafting aid, not legal advice, and the references behind it state the law as of 20 October 2026. Please have your external counsel review every draft before you rely on it, and treat the dates above and inside each file as a check-your-current-text reminder, not a guarantee the law has not moved since.
+
+## Questions we need answered before counsel's review (please answer inline or in a call)
+
+These are the facts the references require that your message did not give us. We have drafted on a stated assumption for each one so you have something to react to; the **"what changes"** line tells you exactly what moves if the answer differs. All of this is also tracked in `open-points.md`.
+
+1. **Trade register / VAT details for the Impressum.** You gave us Amtsgericht Ulm HRB 000000 and the managing director's name. We still need: the VAT ID (Umsatzsteuer-ID) if you have one, and a phone number or confirmation that email-only contact is acceptable for the "schnelle Kontaktaufnahme" duty. *Assumption: VAT ID exists and will be supplied before publication; email-only contact is offered.* **What changes:** the Impressum draft is not part of this delivery (you asked for subscription terms and withdrawal information only), but your checkout will need to link to one, and Stridewell Plus's order screen needs the same identity block repeated under German e-commerce law.
+2. **Who actually sells the EU/EEA subscription: Example Fitness GmbH directly, or an app-store intermediary (Apple, Google) acting as merchant of record for in-app purchases?** This changes who the contracting party is for an in-app sale, and whose withdrawal and cancellation duties attach. *Assumption for this draft: Example Fitness GmbH is the contracting party for the web checkout; the app-store purchase may have the platform as merchant of record, which is called out as an open point rather than resolved.*
+3. **Does Stridewell process workout, heart-rate and body-weight data as a controller for its own purposes (coaching, analytics, product improvement), or only to run the subscription the user asked for?** This is not just a privacy-notice question: if any processing goes beyond running the contract, the "payment in personal data" trigger under EU consumer law applies more broadly, and age-gating and legitimate-interest balancing get stricter. *Assumption: yes, Stridewell uses this data for its own analytics and product purposes beyond bare contract performance (workout history drives the plan itself, and you told us there is a separate US analytics SDK).*
+4. **Is heart-rate or body-weight data ever linked to a user's identity in a way a clinician would call health data, or is it kept as fitness/performance data only?** Under GDPR this can tip into Art. 9 special-category data; under Washington's My Health My Data Act, "consumer health data" is defined broadly enough that fitness metrics can qualify even outside a clinical context. *Assumption for this draft: treated as ordinary (non-special-category) personal data, consistent with "fitness tracking" framing, but this needs confirmation before the privacy notice (a separate document) is drafted.*
+5. **Minimum age of 16: is this a product policy choice, or did you set it because you believe German or another Member State's GDPR Art. 8 floor requires it?** The GDPR band for a child's own consent to an information-society service runs 13 to 16 depending on Member State, and the references we have do not state Germany's specific chosen figure (only that it sits somewhere in that band). *Assumption: 16 is your own product policy, set at or above every applicable Member State floor, so it does not need recalculation per country.* **What changes:** if 16 was chosen because you believe it is Germany's legal floor, we still cannot confirm that figure from the sources available and it stays an open point for counsel either way.
+6. **Does the 7-day free trial collect payment details before the trial starts (card-on-file that auto-charges on day 8), or are no billing details collected until the trial ends?** This changes which ROSCA/California/New York "before billing information is collected" disclosure timeline governs, and whether the EU withdrawal clock needs the early-performance consent language. *Assumption: card-on-file is collected at trial sign-up and the card is charged automatically on day 8 unless cancelled; this is the more common pattern and the one we have drafted for.*
+7. **Who is the contracting party for California and New York users: Example Fitness GmbH itself (a German entity selling directly into those states), or a US affiliate/subsidiary?** Nothing in your message suggests a US entity exists, so we have assumed the German GmbH itself is the seller of record into California and New York, which is legally possible but worth confirming for your US counsel's review. *Assumption: Example Fitness GmbH is the seller of record in both US states; neither state's exemption list applies to it.*
+8. **Do you want one global subscription-terms document with jurisdiction-tagged modules (what we drafted), or did you want three separate documents from the start (EU, California, New York)?** *Assumption: one document with clearly labelled modules, consistent with how most subscription apps of this size actually ship it, and consistent with your single monthly price point across markets.*
+
+## What we drafted
+
+Given your message, two documents and three supporting registers, all under `outputs/`:
+
+- **`subscription-terms.md`**: Stridewell Plus subscription terms, assembled from the EU-consumer, Germany and US (California/New York) modules side by side, each clearly labelled so you can see exactly which text applies to which user. This is the core deliverable you asked for.
+- **`withdrawal-information.md`**: the German-law withdrawal information for the services/subscription case (Muster-Widerrufsbelehrung, correctly filled in), plus an English courtesy version for your Austrian and other non-German EU users, and the model withdrawal form. This is a consumer right that exists in the EU for a digital-service subscription; it does not exist in the US.
+- **`implementation-requirements.md`**: the exact behaviour your checkout, renewal and cancellation flows must have, one row per requirement, with the legal basis, so your product and engineering teams can build and sign off against it directly. This answers "tell us exactly what our checkout, renewal and cancellation flows must do."
+- **`annotations.md`**: the applicability table (which law reaches you, which does not, and why), the clause-by-clause legal basis, and the conflict-checklist results we ran against every draft.
+- **`open-points.md`**: every fact we could not get from your message or from the references, each one tied to the draft text it would change.
+
+## The headline items your checkout, renewal and cancellation flows need to get right
+
+The full detail is in `implementation-requirements.md`; the three that carry real legal risk if missed:
+
+- **Your checkout's order button** needs the exact wording "zahlungspflichtig bestellen" for German users (or "order with obligation to pay" / the Art. 8(2) equivalent elsewhere in the EU) and nothing else on the button. A soft label like "Start trial" or "Subscribe" does not meet this standard once a court looks at it (the CJEU has struck down softer wording on exactly this point).
+- **You need a standing German cancellation button** ("Verträge hier kündigen") reachable at all times from your website, separate from the EU withdrawal right, leading straight to a confirmation page that may show only five fixed fields and nothing else: no retention offer, no "are you sure," no pause option. If this button is missing or non-compliant, German users can cancel at any time with no notice period at all, which is a real commercial risk for a monthly subscription business.
+- **Your 7-day trial-to-paid conversion** needs its own pre-charge disclosure and affirmative consent step under both EU law and the California/New York auto-renewal statutes, timed before you ever collect the card, not just before the first charge.
+
+## What we did not draft, on purpose
+
+Your message asked specifically for subscription terms and withdrawal information, plus the flow requirements. We did not draft a privacy notice, a cookie notice, a data processing agreement, a full terms-of-service document (acceptable use, IP, disputes), or an Impressum, even though your product will need all of them before launch: the health-adjacent data (heart rate, body weight), the US analytics SDK, and the Frankfurt hosting all feed into a privacy notice that is a separate drafting task. This is flagged in `open-points.md` so it is not lost.
+
+We also did not resolve whether California's CCPA applies to you at all: your revenue (about EUR 2 million) and user count (about 40,000, with 3,000 in California) both look well under the statute's $25 million revenue and 100,000-consumer thresholds, but we are not permitted to calculate or assume a threshold figure from your numbers, so this stays an explicit open point for counsel rather than a quiet assumption in the drafts.
