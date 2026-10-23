@@ -39,6 +39,9 @@ theme:
     - content.code.copy
     - search.suggest
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - search
   - llmstxt:
